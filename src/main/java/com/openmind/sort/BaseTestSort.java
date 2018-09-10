@@ -5,7 +5,7 @@ public abstract class BaseTestSort {
     abstract int[] sort(int[] a);
 
     static int[] genRandomArray(int count) {
-        if (count == 0) {
+        if (count <= 0) {
             count = 7;
         }
 
