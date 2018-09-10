@@ -2,7 +2,7 @@ package com.openmind.sort;
 
 public abstract class BaseTestSort {
 
-    abstract int[] sort(int[] origin);
+    abstract int[] sort(int[] a);
 
     static int[] genRandomArray(int count) {
         if (count == 0) {
@@ -38,8 +38,7 @@ public abstract class BaseTestSort {
     }
 
     void swap(int[] a, int i, int j) {
-        int tmp;
-        tmp = a[i];
+        int tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
 

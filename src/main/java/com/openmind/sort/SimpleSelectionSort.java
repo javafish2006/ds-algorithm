@@ -9,10 +9,6 @@ public class SimpleSelectionSort extends BaseTestSort {
 
     @Override
     int[] sort(int[] a) {
-        if (a == null || a.length == 0) {
-            return a;
-        }
-
         int min, count = 0, n = a.length;
         for (int i = 0; i < n - 1; i++) {
             min = i;
@@ -25,6 +21,7 @@ public class SimpleSelectionSort extends BaseTestSort {
             if (min != i) {
                 swap(a, i, min);
             }
+//            printArray(a);
         }
         System.out.printf("element: %s, O(n) = %s \n", n, count);  // n-1 + n-2 + …… + 1 = n (n -1 ) /2
         return a;
