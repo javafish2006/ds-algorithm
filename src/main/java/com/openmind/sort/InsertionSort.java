@@ -30,7 +30,7 @@ public class InsertionSort extends BaseTestSort {
             while (j >= 0 && current < a[j]) {
                 a[j + 1] = a[j];
                 j--;
-                count ++;
+                count++;
             }
             a[j + 1] = current;
             printArray(a);

@@ -1,8 +1,14 @@
 package com.openmind.sort;
 
+import java.util.Arrays;
+
 public abstract class BaseTestSort {
 
     abstract int[] sort(int[] a);
+
+    int[] customerArray() {
+        return null;
+    }
 
     static int[] genRandomArray(int count) {
         if (count <= 0) {
@@ -27,13 +33,18 @@ public abstract class BaseTestSort {
     void proceeding(int n) {
 
         //init array, then print
-        int[] origin = genRandomArray(n);
+        int[] origin = customerArray() == null ? genRandomArray(n) : customerArray();
         System.out.print("Origin: ");
         printArray(origin);
 
         //sorting & print
-        origin = sort(origin);
+        int[] sorted = sort(origin);
         System.out.print("Sorted: ");
+        printArray(sorted);
+
+        //verify
+        Arrays.sort(origin);
+        System.out.print("verify: ");
         printArray(origin);
     }
 
