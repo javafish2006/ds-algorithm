@@ -39,6 +39,6 @@ public class ShellSort extends BaseSortProcess {
     }
 
     public static void main(String[] args) {
-        new ShellSort().proceeding(10);
+        new ShellSort().proceeding(100);
     }
 }
