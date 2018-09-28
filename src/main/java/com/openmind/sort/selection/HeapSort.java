@@ -2,6 +2,11 @@ package com.openmind.sort.selection;
 
 import com.openmind.sort.BaseSortProcess;
 
+/**
+ * Heap sort : ascending
+ * CPU complexity: O(nlogn) O(nlogn) O(nlogn)
+ * Mem complexity: O(1)
+ */
 public class HeapSort extends BaseSortProcess {
 
     @Override
