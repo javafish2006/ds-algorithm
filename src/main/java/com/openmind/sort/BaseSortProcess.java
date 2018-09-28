@@ -1,6 +1,7 @@
 package com.openmind.sort;
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 public abstract class BaseSortProcess {
 
@@ -36,15 +37,17 @@ public abstract class BaseSortProcess {
         System.out.print("Origin: ");
         printArray(origin);
 
+        int[] tmp = origin.clone();
+
         //sorting & print
         int[] sorted = sort(origin);
         System.out.print("Sorted: ");
         printArray(sorted);
 
         //verify
-        Arrays.sort(origin);
+        Arrays.sort(tmp);
         System.out.print("verify: ");
-        printArray(origin);
+        printArray(tmp);
     }
 
     protected void swap(int[] a, int i, int j) {
