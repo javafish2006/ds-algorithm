@@ -1,23 +1,30 @@
-package com.openmind.sort;
+package com.openmind.sort.selection;
+
+import com.openmind.sort.BaseSortProcess;
 
 /**
- * 简单选择排序 Selection Sort
- * complex: O(n^2)
- * storage: O(n)
+ * Selection Sort: ascending
+ * complexity: O(n) O(n^2) O(n^2)
+ * storage: O(1)
  */
-public class SimpleSelectionSort extends BaseTestSort {
+public class SelectionSort extends BaseSortProcess {
 
     @Override
-    int[] sort(int[] a) {
+    protected int[] sort(int[] a) {
         int min, count = 0, n = a.length;
+        //3. recursive one by one since a[0]
         for (int i = 0; i < n - 1; i++) {
             min = i;
+
+            //1.comparison, pick the min element in  a[i, n]
             for (int j = i + 1; j < n; j++) {
                 if (a[j] < a[min]) {
                     min = j;
                 }
                 count++;
             }
+
+            //2.placed the min element at a[i]
             if (min != i) {
                 swap(a, i, min);
             }
@@ -28,7 +35,7 @@ public class SimpleSelectionSort extends BaseTestSort {
     }
 
     public static void main(String[] args) {
-        new SimpleSelectionSort().proceeding(10);
+        new SelectionSort().proceeding(10);
     }
 
 }

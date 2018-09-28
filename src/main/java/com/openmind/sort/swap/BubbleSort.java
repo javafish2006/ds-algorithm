@@ -1,9 +1,11 @@
-package com.openmind.sort;
+package com.openmind.sort.swap;
 
-public class BubbleSort extends BaseTestSort {
+import com.openmind.sort.BaseSortProcess;
+
+public class BubbleSort extends BaseSortProcess {
 
     @Override
-    int[] sort(int[] a) {
+    protected int[] sort(int[] a) {
         int n = a.length, count = 0;
         boolean swapped;                         //optimised
         for (int i = 0; i < n - 1; i++) {        //need n-1 rounds

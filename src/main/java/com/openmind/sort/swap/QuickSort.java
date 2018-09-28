@@ -1,12 +1,14 @@
-package com.openmind.sort;
+package com.openmind.sort.swap;
+
+import com.openmind.sort.BaseSortProcess;
 
 /**
  * 快速排序： 稳定排序 ， 时间复杂度为O(n) = n*logn
  */
-public class QuickSort extends BaseTestSort {
+public class QuickSort extends BaseSortProcess {
 
     @Override
-    int[] sort(int[] a) {
+    protected int[] sort(int[] a) {
 
         sort(a, 0, a.length - 1);
         return a;
@@ -52,7 +54,7 @@ public class QuickSort extends BaseTestSort {
     }
 
     @Override
-    int[] customerArray() {
+    protected int[] customerArray() {
 //        return new int[]{9, 8, 7, 6, 5, 4, 3, 2, 1, 7, 3};
         return null;
     }

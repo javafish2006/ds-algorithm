@@ -1,6 +1,8 @@
-package com.openmind.sort;
+package com.openmind.sort.insertion;
 
-public class InsertionSort extends BaseTestSort {
+import com.openmind.sort.BaseSortProcess;
+
+public class InsertionSort extends BaseSortProcess {
 
 //    @Override
 //    int[] sort(int[] a) {
@@ -22,7 +24,7 @@ public class InsertionSort extends BaseTestSort {
 
 
     @Override
-    int[] sort(int[] a) {
+    protected int[] sort(int[] a) {
         int n = a.length, count = 0, current, j;
         for (int i = 1; i < n; i++) {
             j = i - 1;

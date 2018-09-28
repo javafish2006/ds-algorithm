@@ -2,11 +2,11 @@ package com.openmind.sort;
 
 import java.util.Arrays;
 
-public abstract class BaseTestSort {
+public abstract class BaseSortProcess {
 
-    abstract int[] sort(int[] a);
+    protected abstract int[] sort(int[] a);
 
-    int[] customerArray() {
+    protected int[] customerArray() {
         return null;
     }
 
@@ -19,18 +19,17 @@ public abstract class BaseTestSort {
         for (int i = 0; i < count; i++) {
             origin[i] = (int) (Math.random() * 100);
         }
-
         return origin;
     }
 
-    static void printArray(int[] origin) {
+    protected static void printArray(int[] origin) {
         for (int t : origin) {
             System.out.print(t + " ");
         }
         System.out.println();
     }
 
-    void proceeding(int n) {
+    public void proceeding(int n) {
 
         //init array, then print
         int[] origin = customerArray() == null ? genRandomArray(n) : customerArray();
@@ -48,10 +47,12 @@ public abstract class BaseTestSort {
         printArray(origin);
     }
 
-    void swap(int[] a, int i, int j) {
+    protected void swap(int[] a, int i, int j) {
+        if(a[i] == a[j]){
+            return ;
+        }
         int tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
-
     }
 }
