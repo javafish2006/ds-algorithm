@@ -1,7 +1,7 @@
 package com.openmind.sort;
 
 /**
- * Shell Sort: ascending , Diminishing Increment Sort
+ * Radix Sort: ascending
  * U complexity: O(n^（1.3—2）)
  * Mem complexity: O(1)
  * Unstable
