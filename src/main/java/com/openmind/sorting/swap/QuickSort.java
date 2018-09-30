@@ -1,6 +1,6 @@
-package com.openmind.sort.swap;
+package com.openmind.sorting.swap;
 
-import com.openmind.sort.BaseSortProcess;
+import com.openmind.sorting.BaseSortProcess;
 
 /**
  * 快速排序： 稳定排序 ， 时间复杂度为O(n) = n*logn

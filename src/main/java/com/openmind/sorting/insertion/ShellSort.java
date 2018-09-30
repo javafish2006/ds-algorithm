@@ -1,6 +1,6 @@
-package com.openmind.sort.insertion;
+package com.openmind.sorting.insertion;
 
-import com.openmind.sort.BaseSortProcess;
+import com.openmind.sorting.BaseSortProcess;
 
 /**
  * Shell Sort: ascending , Diminishing Increment Sort
@@ -17,7 +17,7 @@ public class ShellSort extends BaseSortProcess {
         //(n/2, n/2/2, ..., 1)
         for (int gap = n / 2; gap > 0; gap /= 2) {
 
-            //insertion sort
+            //insertion sorting
             for (int i = gap; i < n; i++) {
                 int j = i, tmp = a[j];
                 while (j - gap >= 0 && tmp < a[j - gap]) {

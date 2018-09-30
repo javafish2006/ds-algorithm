@@ -1,6 +1,6 @@
-package com.openmind.sort.swap;
+package com.openmind.sorting.swap;
 
-import com.openmind.sort.BaseSortProcess;
+import com.openmind.sorting.BaseSortProcess;
 
 public class BubbleSort extends BaseSortProcess {
 

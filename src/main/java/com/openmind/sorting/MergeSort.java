@@ -1,7 +1,7 @@
-package com.openmind.sort;
+package com.openmind.sorting;
 
 /**
- * Merge sort : ascedning
+ * Merge sorting : ascedning
  * CPU complexity: O(nlogn) O(nlogn) O(nlogn)
  * Mem complexity: O(n)
  **/

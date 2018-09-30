@@ -1,6 +1,6 @@
-package com.openmind.sort.selection;
+package com.openmind.sorting.selection;
 
-import com.openmind.sort.BaseSortProcess;
+import com.openmind.sorting.BaseSortProcess;
 
 /**
  * Selection Sort: ascending

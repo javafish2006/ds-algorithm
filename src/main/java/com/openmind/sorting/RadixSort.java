@@ -1,4 +1,4 @@
-package com.openmind.sort;
+package com.openmind.sorting;
 
 /**
  * Radix Sort: ascending

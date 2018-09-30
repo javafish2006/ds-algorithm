@@ -1,11 +1,11 @@
-package com.openmind.sort.insertion;
+package com.openmind.sorting.insertion;
 
-import com.openmind.sort.BaseSortProcess;
+import com.openmind.sorting.BaseSortProcess;
 
 public class InsertionSort extends BaseSortProcess {
 
 //    @Override
-//    int[] sort(int[] a) {
+//    int[] sorting(int[] a) {
 //        int n = a.length, count = 0, pos, current;
 //        for (int i = 1; i < n; i++) {
 //            pos = i;

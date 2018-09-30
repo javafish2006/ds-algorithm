@@ -1,9 +1,9 @@
-package com.openmind.sort.selection;
+package com.openmind.sorting.selection;
 
-import com.openmind.sort.BaseSortProcess;
+import com.openmind.sorting.BaseSortProcess;
 
 /**
- * Heap sort : ascending
+ * Heap sorting : ascending
  * CPU complexity: O(nlogn) O(nlogn) O(nlogn)
  * Mem complexity: O(1)
  */

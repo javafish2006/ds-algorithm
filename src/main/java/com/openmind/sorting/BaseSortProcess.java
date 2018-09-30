@@ -1,7 +1,6 @@
-package com.openmind.sort;
+package com.openmind.sorting;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 public abstract class BaseSortProcess {
 
