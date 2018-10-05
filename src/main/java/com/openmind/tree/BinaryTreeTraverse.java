@@ -1,6 +1,11 @@
 package com.openmind.tree;
 
 
+import com.sun.jmx.remote.internal.ArrayQueue;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+
 class BinaryTree {
     Node root;
 
@@ -97,8 +102,53 @@ class BinaryTree {
 
         int h = height(root);
         for (int i = 1; i <= h; i++) {
+            System.out.println("--------i start " + i);
             traverseLevelOrder(root, i);
-            System.out.println();
+            System.out.printf("\n--------%s end \n", i);
+        }
+    }
+
+    void traverseLevelOrderByArray() {
+        ArrayList<Node> array = new ArrayList<>();
+        array.add(root);
+
+        while (!array.isEmpty()) {
+            ArrayList<Node> tmp = new ArrayList<>();
+            for (Node t : array) {
+                //1.visit the node
+                System.out.print(t.key + " ");
+
+                //2.
+                if (t.left != null) {
+                    tmp.add(t.left);
+                }
+
+                if(t.right != null){
+                    tmp.add(t.right);
+                }
+            }
+
+            array = tmp;
+        }
+    }
+
+
+    void traverseLevelOrderByDequeue(){
+        ArrayDeque<Node> deque = new ArrayDeque<>();
+        deque.offer(root);
+        while(!deque.isEmpty()){
+            Node poll = deque.poll();
+            //1.visit
+            System.out.print(poll.key + " ");
+
+            //2.level add
+            if(poll.left != null){
+                deque.offer(poll.left);
+            }
+
+            if(poll.right != null){
+                deque.offer(poll.right);
+            }
         }
     }
 
@@ -135,6 +185,10 @@ class BinaryTree {
         binaryTree.root.right.left = new Node(6);
         binaryTree.root.right.right = new Node(7);
         binaryTree.traverseLevelOrder();
+        System.out.println();
+        binaryTree.traverseLevelOrderByArray();
+        System.out.println();
+        binaryTree.traverseLevelOrderByDequeue();
     }
 }
 
