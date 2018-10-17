@@ -4,6 +4,10 @@ package com.openmind.linkedlist;
 class LinkedList {
     Node head;
 
+
+    public LinkedList() {
+    }
+
     public LinkedList(Node head) {
         this.head = head;
     }
@@ -24,18 +28,28 @@ class LinkedList {
         }
     }
 
-    //Iterative reverse each node 就地反转
-    static Node reverse(Node node) {
+    //insert as head
+    void add(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        node.next = head;
+        head = node;
+    }
+
+    //reverse current element
+    Node reverse(Node node) {
         Node current = node;
-        Node pre = null, next;
+        Node pre = null, nextTmp;
         while (current != null) {
             //1.
-            next = current.next;
+            nextTmp = current.next;
 
             //2.
             current.next = pre;
             pre = current;
-            current = next;
+            current = nextTmp;
         }
         node = pre;
         return node;
@@ -43,73 +57,48 @@ class LinkedList {
 
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList(new Node(1));
-        list.head.next = new Node(2);
-        list.head.next.next = new Node(3);
-        list.head.next.next.next = new Node(4);
-        list.head.next.next.next.next = new Node(5);
+        LinkedList list = new LinkedList();
+        for (int i = 0; i < 10; i++) {
+            list.add(new Node(i));
+        }
 
         System.out.print("origianl list: ");
         printList(list.head);
+
         System.out.printf("\nreversed list: ");
-        list.head = reverse(list.head);
+        list.head = list.reverse(list.head);
         printList(list.head);
     }
 }
 
-public class LinkedListReverse {
+public class LinkedListReverse extends LinkedList {
 
-
-    Node head;
-
-    public LinkedListReverse(Node head) {
-        this.head = head;
-    }
-
-    static class Node {
-        int data;
-        LinkedList.Node next;
-
-        public Node(int data) {
-            this.data = data;
+    @Override
+    Node reverse(Node node) {
+        if (node == null || node.next == null) {
+            //set the last element as the head of list
+            head = node;
+            return node;
         }
-    }
 
-    static void printList(LinkedList.Node head) {
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next;
-        }
-    }
-
-    //recursively
-    static Node reverse(Node node) {
-        Node current = node;
-        Node pre = null, next;
-        while (current != null) {
-            //1.
-            next = current.next;
-
-            //2.
-            current.next = pre;
-            pre = current;
-            current = next;
-        }
-        node = pre;
+        Node headNode = reverse(node.next);
+        headNode.next = node;
+        node.next = null;
         return node;
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList(new LinkedList.Node(1));
-        list.head.next = new LinkedList.Node(2);
-        list.head.next.next = new LinkedList.Node(3);
-        list.head.next.next.next = new LinkedList.Node(4);
-        list.head.next.next.next.next = new LinkedList.Node(5);
+        LinkedListReverse list = new LinkedListReverse();
+        for (int i = 0; i < 21; i++) {
+            list.add(new Node(i));
+        }
 
-        System.out.print("origianl list: ");
+        System.out.print("original list: ");
         printList(list.head);
+
+        list.reverse(list.head);
         System.out.printf("\nreversed list: ");
-        list.head = reverse(list.head);
         printList(list.head);
+
     }
 }
