@@ -117,7 +117,7 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
-        /* Let us create following BST
+        /* BST
               50
            /     \
           30      70
