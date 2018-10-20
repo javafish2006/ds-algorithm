@@ -42,7 +42,10 @@ public class BaseBinaryTree {
 
         if (level == 1) {
             System.out.println(root.data + " ");
-        } else if (level > 1) {
+            return;
+        }
+
+        if (level > 1) {
             printLevelOrder(root.left, level - 1);
             printLevelOrder(root.right, level - 1);
         }
