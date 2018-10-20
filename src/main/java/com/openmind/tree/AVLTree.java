@@ -141,7 +141,6 @@ public class AVLTree {
                     root = tmp;
                 } else {
                     //case: no child
-                    tmp = root;
                     root = null;
                 }
             } else {
@@ -158,17 +157,16 @@ public class AVLTree {
             return root;
         }
 
-
         root.height = max(height(root.left), height(root.right)) + 1;
         int balance = getBalance(root);
 
         //case : left - left
-        if (balance > 1 && (getBalance(root.left) > 0)) {
+        if (balance > 1 && getBalance(root.left) > 0) {
             return rightLeftRotate(root);
         }
 
         //case: left -right
-        if (balance > 1 && (getBalance(root.left) < 0)) {
+        if (balance > 1 && getBalance(root.left) < 0) {
             return leftRightRotate(root);
         }
 
@@ -251,7 +249,8 @@ public class AVLTree {
 
 //        avl.delete(avl.root, 8);
 //        avl.delete(avl.root, 7);
-        avl.delete(avl.root, 6);
+//        avl.delete(avl.root, 6);
+        avl.delete(avl.root, 101);
         avl.preOrder(avl.root);
     }
 }
