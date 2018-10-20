@@ -124,6 +124,24 @@ public class AVLTree {
         preOrder(node.right);
     }
 
+    void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.print(node.key + " ");
+        inOrder(node.right);
+    }
+
+    void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.key + " ");
+    }
+
     public static void main(String[] args) {
 //        /** 30
 //         /  \
@@ -138,7 +156,13 @@ public class AVLTree {
 //        avl.root = avl.insert(avl.root, 40);
 //        avl.root = avl.insert(avl.root, 50);
 
-
+        //      6
+        //     /  \
+        //   4     9
+        //  /  \  /  \
+        //  1  5  7  10
+        //         \
+        //          8
         AVLTree avl = new AVLTree();
         avl.root = avl.insert(avl.root, 1);
         avl.root = avl.insert(avl.root, 4);
@@ -149,5 +173,9 @@ public class AVLTree {
         avl.root = avl.insert(avl.root, 9);
         avl.root = avl.insert(avl.root, 8);
         avl.preOrder(avl.root);
+        System.out.println();
+        avl.inOrder(avl.root);
+        System.out.println();
+        avl.postOrder(avl.root);
     }
 }
